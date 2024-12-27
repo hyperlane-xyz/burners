@@ -1,7 +1,7 @@
 {
   "name": "@symbioticfi/burners",
   "version": "1.0.0-devnet.1",
-  "description": "Symbiotic is a shared security protocol enabling decentralized networks to control and customize their own multi-asset restaking implementation.",
+  "description": "Symbiotic Burners repository contains an implementation of Burner Router allowing an organization of flexible on-slash burning mechanics, and several pure Burners for different assets.",
   "homepage": "https://symbiotic.fi/",
   "bugs": "https://github.com/symbioticfi/burners/issues",
   "license": "MIT",
@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "@openzeppelin/contracts": "5.0.2",
-    "@openzeppelin/contracts-upgradeable": "5.0.2"
+    "@openzeppelin/contracts-upgradeable": "5.0.2",
+    "@symbioticfi/core": "1.0.0-devnet.9"
   }
 }
