@@ -1,5 +1,3 @@
-## ⚠️ Disclaimer: This code is going through audits. It is NOT intended for a production use yet.
-
 **[Symbiotic Protocol](https://symbiotic.fi) is an extremely flexible and permissionless shared security system.**
 
 This repository contains Symbiotic Default Burners contracts.
@@ -7,6 +5,10 @@ This repository contains Symbiotic Default Burners contracts.
 ## Technical Documentation
 
 Technical documentation can be found [here](./specs).
+
+## Security
+
+Security audits can be found [here](./audits).
 
 ## Usage
 
