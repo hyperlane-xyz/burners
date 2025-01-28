@@ -22,7 +22,14 @@ library SymbioticBurnersConstants {
     function burners() internal view returns (Burners memory) {
         if (block.chainid == 1) {
             // mainnet
-            revert("SymbioticCoreConstants.burners(): mainnet not supported yet");
+            return Burners({
+                ETHx_Burner: ISymbioticETHx_Burner(0xCd669361D629380A70338d613D29c6F3a28A2B50),
+                mETH_Burner: ISymbioticmETH_Burner(0x919C4329Ed4D4A72c72c126ff8AE351C1E7Ce231),
+                rETH_Burner: ISymbioticrETH_Burner(0x89e3915C9Eb07D1bfF5d78e24B28d409dba9B272),
+                sfrxETH_Burner: ISymbioticsfrxETH_Burner(0xBe5821dB563311750f6295E3CDB40aBbDBfF0c4b),
+                swETH_Burner: ISymbioticswETH_Burner(0x1Aca33aE8f57E2cdADd0375875AE12fb08c54529),
+                wstETH_Burner: ISymbioticwstETH_Burner(0xdCaC890b14121FD5D925E2589017Be68C2B5B324)
+            });
         } else if (block.chainid == 17_000) {
             // holesky
             return Burners({
@@ -51,7 +58,7 @@ library SymbioticBurnersConstants {
     function burnerRouterFactory() internal view returns (ISymbioticBurnerRouterFactory) {
         if (block.chainid == 1) {
             // mainnet
-            revert("SymbioticBurnersConstants.burnerRouterFactory(): mainnet not supported yet");
+            return ISymbioticBurnerRouterFactory(0x99F2B89fB3C363fBafD8d826E5AA77b28bAB70a0);
         } else if (block.chainid == 17_000) {
             // holesky
             return ISymbioticBurnerRouterFactory(0x32e2AfbdAffB1e675898ABA75868d92eE1E68f3b);
@@ -64,27 +71,27 @@ library SymbioticBurnersConstants {
     }
 
     function ETHx_BurnerSupported() internal view returns (bool) {
-        return block.chainid == 17_000;
+        return block.chainid == 1 || block.chainid == 17_000;
     }
 
     function mETH_BurnerSupported() internal view returns (bool) {
-        return block.chainid == 17_000 || block.chainid == 11_155_111;
+        return block.chainid == 1 || block.chainid == 17_000 || block.chainid == 11_155_111;
     }
 
     function rETH_BurnerSupported() internal view returns (bool) {
-        return block.chainid == 17_000;
+        return block.chainid == 1 || block.chainid == 17_000;
     }
 
     function sfrxETH_BurnerSupported() internal view returns (bool) {
-        return false;
+        return block.chainid == 1;
     }
 
     function swETH_BurnerSupported() internal view returns (bool) {
-        return false;
+        return block.chainid == 1;
     }
 
     function wstETH_BurnerSupported() internal view returns (bool) {
-        return block.chainid == 17_000 || block.chainid == 11_155_111;
+        return block.chainid == 1 || block.chainid == 17_000 || block.chainid == 11_155_111;
     }
 
     function burner(
